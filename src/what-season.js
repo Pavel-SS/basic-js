@@ -22,7 +22,7 @@ export default function getSeason(date) {
   if (!date) {
     return 'Unable to determine the time of year!';
   } 
-  if (isNaN(date) || !date.getMonth()){
+  if ( !date instanceof Date || typeof date !== 'object' || Object.keys(date).length > 0){
     throw new Error ('Invalid date!');
   }
   return month[parseInt((date.getMonth() + 1) / 3)];
