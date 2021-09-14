@@ -1,4 +1,6 @@
-import { NotImplementedError } from '../extensions/index.js';
+import {
+  NotImplementedError
+} from '../extensions/index.js';
 
 /**
  * Given two strings, find the number of common characters between them.
@@ -13,12 +15,13 @@ import { NotImplementedError } from '../extensions/index.js';
  */
 export default function getCommonCharacterCount(s1, s2) {
   let count = 0,
-      x = s1;
-  for (let i = 0; i < s2.length; i++){
-    if (x.includes(s2[i])){
-      x = x.replace(s2[i], '');
-      count++;
+    x = s1;
+
+  s2.split('').forEach(item => {
+    if (x.includes(item)) {
+      x = x.replace(item, '');
+      count++
     }
-  }
+  });
   return count;
 }
