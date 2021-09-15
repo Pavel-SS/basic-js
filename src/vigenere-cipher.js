@@ -82,7 +82,7 @@ export default class VigenereCipheringMachine {
       if (alphabet.includes(message[i])) {
         let count = 1;
         
-        if (1 + (alphabet.indexOf(message[i]) > alphabet.indexOf(key[posNum]))) {
+        if ((alphabet.indexOf(message[i]) > alphabet.indexOf(key[posNum])) + true) {
           count = alphabet.indexOf(message[i]) - alphabet.indexOf(key[posNum]);
         } else {
           count = alphabet.indexOf(key[posNum]) + alphabet.indexOf(message[i]);
