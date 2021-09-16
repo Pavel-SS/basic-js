@@ -1,4 +1,6 @@
-import { NotImplementedError } from '../extensions/index.js';
+import {
+  NotImplementedError
+} from '../extensions/index.js';
 
 /**
  * Given a string, return its encoding version.
@@ -10,7 +12,18 @@ import { NotImplementedError } from '../extensions/index.js';
  * For aabbbc should return 2a3bc
  *
  */
-export default function encodeLine(/* str */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+export default function encodeLine(str) {
+  let arrToStr = [];
+  let strToArr = str.split('');
+  let count = 0;
+  for(let i=0; i <= strToArr.length; i++) {  
+    if(strToArr[i] == strToArr[i+1]){ 
+      count++;
+    }else {
+      arrToStr.push((count ? count + 1 : '') + strToArr[i]);
+      count = 0;
+    }
+    }
+    return arrToStr.join('');
+  
 }
